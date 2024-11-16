@@ -1,0 +1,65 @@
+create database if not exists retailwarehouse;
+use retailwarehouse;
+
+CREATE TABLE IF NOT EXISTS fact_sales (
+    sale_id STRING,
+    customer_id STRING,
+    product_id STRING,
+    sale_date DATE,
+    quantity INT,
+    total_sales_amount FLOAT,
+    payment_method STRING
+)
+STORED AS PARQUET;
+
+
+CREATE TABLE IF NOT EXISTS dim_customer (
+    customer_id STRING,
+    first_name STRING,
+    last_name STRING,
+    email STRING,
+    phone_number STRING,
+    address STRING,
+    city STRING,
+    state STRING,
+    zip_code STRING,
+    registration_date DATE,
+    effective_date DATE,
+    end_date DATE,
+    is_current BOOLEAN
+)
+STORED AS PARQUET;
+
+
+
+
+CREATE TABLE IF NOT EXISTS dim_product (
+    product_id STRING,
+    product_name STRING,
+    category STRING,
+    price FLOAT,
+    stock_quantity INT,
+    supplier_name STRING,
+    supplier_contact STRING,
+    effective_date DATE,
+    end_date DATE,
+    is_current BOOLEAN
+)
+STORED AS PARQUET;
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS dim_employee (
+    employee_id STRING,
+    first_name STRING,
+    last_name STRING,
+    email STRING,
+    department STRING,
+    position STRING,
+    salary FLOAT,
+    hire_date DATE
+)
+STORED AS PARQUET;
