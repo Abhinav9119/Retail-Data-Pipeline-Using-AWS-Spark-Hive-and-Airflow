@@ -1,17 +1,2 @@
-# to download aws spark dependencies
-spark-submit --packages org.apache.hadoop:hadoop-aws:3.1.2,com.amazonaws:aws-java-sdk-bundle:1.11.375 your_script.py
-spark-submit --packages org.apache.hadoop:hadoop-aws:3.1.2,com.amazonaws:aws-java-sdk-bundle:1.11.375 main.py
-
-
-
-
-
-tasks
-1) downloading files from s3 to local 
-2) extract this files using extractor class in spark 
-3) transform this files using transformer class
-4) make good structure for data warehouse in star schema and incremantal load
-5) also use append for daily data
-6)load this data in form of parquet files in hive
-7) query this files and make department wise data mart
-8) if time permits make sum visualization also
+boto3
+pyspark
